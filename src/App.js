@@ -7,7 +7,6 @@ import { hover } from '@testing-library/user-event/dist/hover';
 function App() {
   const [code, setCode] = useState(""); 
   const [bingoCard, setBingoCard] = useState(null)
-  const [winner, setWinner] = useState(null)
 
   const getCard = () => {
     axios.get(`http://www.hyeumine.com/getcard.php?bcode=${code}`)
@@ -37,7 +36,6 @@ const checkWin = () => {
   }
 
     const data = response.data;
-    setWinner(data)
     console.log(bingoCard.playcard_token)
     if(data === 0){
       alert("You have not won yet!")
@@ -123,7 +121,6 @@ return (
     </>
 );
 
-// ... (remaining code)
 
   
   }
